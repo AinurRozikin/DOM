@@ -1,0 +1,17 @@
+.button-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+}
