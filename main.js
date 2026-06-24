@@ -35,3 +35,21 @@ function generateColor(){
     this.style.backgroundColor = warnaButton;
     this.style.color = warnaHeading;
 }
+
+//event prevent default
+const kirim = document.querySelector('form');
+const textarea = document.querySelector('#textarea');
+const listUL = document.createElement('ul');
+document.body.appendChild(listUL);
+
+kirim.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    let nilai = textarea.value;
+    let listLI  = document.createElement('li');
+    listLI.textContent = nilai;
+    listUL.appendChild(listLI);
+    textarea.value = '';
+
+})
+
