@@ -3,10 +3,18 @@ let display2 = document.querySelector("#display-2");
 let player1 = document.querySelector("#player-1");
 let player2 = document.querySelector("#player-2");
 let clearDisplay = document.querySelector("#clearDisplay");
+let option = document.querySelector("#select");
 
 let score = 0;
-let winPoint = 6;
 let isWin = false;
+let winPoint = 6;
+
+function remove() {
+  score = 0;
+  isWin = false;
+  display1.textContent = 0;
+  display2.textContent = 0;
+}
 
 player1.addEventListener("click", () => {
   if (!isWin) {
@@ -16,6 +24,7 @@ player1.addEventListener("click", () => {
     }
   }
 });
+
 player2.addEventListener("click", () => {
   if (!isWin) {
     display2.textContent = ++score;
@@ -25,9 +34,9 @@ player2.addEventListener("click", () => {
   }
 });
 
-clearDisplay.addEventListener("click", () => {
-  display1.textContent = 0;
-  display2.textContent = 0;
-  isWin = false;
-  score = 0;
+clearDisplay.addEventListener("click", remove);
+
+option.addEventListener("change", function () {
+  winPoint = parseInt(this.value);
+  remove();
 });
